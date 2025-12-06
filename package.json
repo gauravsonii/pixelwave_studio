@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node -e \"const os=require('os');const platform=os.platform();const arch=os.arch();let pkg='';if(platform==='linux')pkg=arch==='arm64'?'@next/swc-linux-arm64-gnu@15.2.4':'@next/swc-linux-x64-gnu@15.2.4';else if(platform==='darwin')pkg=arch==='arm64'?'@next/swc-darwin-arm64@15.2.4':'@next/swc-darwin-x64@15.2.4';else if(platform==='win32')pkg=arch==='arm64'?'@next/swc-win32-arm64-msvc@15.2.4':'@next/swc-win32-x64-msvc@15.2.4';if(pkg){try{require(pkg.split('@')[0])}catch(e){require('child_process').execSync('npm install '+pkg+' --no-save --legacy-peer-deps',{stdio:'ignore'})}}\"",
+    "prebuild": "node scripts/ensure-swc.js",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
