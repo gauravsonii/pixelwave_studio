@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install --legacy-peer-deps --include=optional",
+  "installCommand": "npm install --legacy-peer-deps --include=optional && (npm install @next/swc-linux-x64-gnu@15.2.4 --no-save --legacy-peer-deps 2>/dev/null || npm install @next/swc-linux-arm64-gnu@15.2.4 --no-save --legacy-peer-deps 2>/dev/null || true)",
   "framework": "nextjs",
   "outputDirectory": ".next"
 }
